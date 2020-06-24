@@ -3,11 +3,21 @@
 {% block content %}
 
 <div class="jumbotron">
-  <h1 class="display-4">Hola, gato!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  <h1 class="display-4">Ahorcado!</h1>
+  <p class="lead">
+  El Ahorcado es un juego de adivinanzas de lápiz y papel, hoy transformado en formato Web. 
+   </p>
+  <p class="lead">
+    El sistema pensara en una palabra, y el jugador tratara de adivinarla arriesgando letras o palabras en la menor cantidad de intentos posibles.
+  </p>
+  <p class="lead">
+    Cada vez que el jugador falle en una letra, perdera intentos, en caso de quedar sin intentos o arriesgar una palabra incorrecta quedara ¡AHORCADO!
+  </p>
+  <div>
+    <div>
+      <a class="btn btn-primary btn-lg" href="{{ url_for('play') }}" role="button">Juguemos</a>
+    </div>
+  </div>
 </div>
 
 {% endblock%}
