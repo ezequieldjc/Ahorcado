@@ -1,2 +1,2 @@
-#Ahorcado - Agiles2020
-Repo Ahorcado - Metodologias Agiles 2020
+# Agiles2020
+Repo Metodologias Agiles 2020
