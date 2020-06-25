@@ -1,29 +1,6 @@
-from flask import Flask, render_template
+from project import create_app
 
-app = Flask(__name__)
+app = create_app('default') 
 
-# Creating simple Routes 
-@app.route('/test')
-def test():
-    return "Home Page"
-
-@app.route('/test/about/')
-def about_test():
-    return "About Page"
-
-# Routes to Render Something
-@app.route('/')
-def home():
-    return render_template("home.html")
-
-@app.route('/about', strict_slashes=False)
-def about():
-    return render_template("about.html")
-
-@app.route('/play', strict_slashes=False)
-def play():
-    return render_template("play.html")
-
-# Make sure this we are executing this file
 if __name__ == '__main__':
     app.run(debug=True)
