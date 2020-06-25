@@ -13,13 +13,15 @@ class Ahorcado():
     dificultad = 0
     letrasing = ''
 
-    def carga_universo (self):
-        time.sleep(0.5)
-        while self.dificultad != 1 and self.dificultad !=2 and self.dificultad !=3:
+    def carga_dificultad(self):
+         while self.dificultad != 1 and self.dificultad !=2 and self.dificultad !=3:
             try:
                 self.dificultad=int(input("------------------Seleccione dificutad ( 1-Facil, 2-Medio, 3-Dificil ): "))
             except ValueError:
                 print("------------------Eso no fue un numero, capo.")
+
+    def carga_universo (self):
+        time.sleep(0.5)
         print('------------------Cargando Universo...')
         time.sleep(0.5)
         if self.dificultad == 1:
@@ -132,6 +134,7 @@ class Ahorcado():
         opcion = 'SI'
         while opcion.upper() == 'SI' or opcion.upper() == 'S':
             system("cls")
+            self.carga_dificultad(self)
             self.carga_universo(self)
             us = ''
             self.intentos = 6 - self.dificultad 

@@ -1,5 +1,8 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 main = Blueprint('main', __name__)
+from .Ahorcado import Ahorcado
+
+a = Ahorcado()
 
 @main.route('/test')
 def test():
@@ -21,3 +24,11 @@ def about():
 @main.route('/play', strict_slashes=False)
 def play():
     return render_template("play.html")
+
+
+@main.route('/play/alias', methods=['POST'])
+def play_alias():
+    name = request.form.get('name')
+    a.ingresa_alias(name)
+    a.carga_universo()
+    return render_template("play.html", alias=a.alias)

@@ -2,14 +2,31 @@
 
 {% block content %}
 
-<!DOCTYPE html>
-<html>
-    <body>
-        <h1>Bienvenido al juego del ahorcado </h1> <br><br>
-        <label for="letra"> Ingrese su Alias: </label>
-        <input type="text" id="letra"> 
-    </body>
-</html>
+<div class="column is-4 is-offset-4">
+    <form method="POST" action="/play/alias">
+    {{ alias }}
+    {% if not alias%}
+    <h3 class="title">Carga tu Alias</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" name="name" placeholder="Alias de jugador" autofocus="">
+                </div>
+            </div>
+            <div class="field">
+                <button class="button is-block is-info is-large is-fullwidth">Jugar</button>
+            </div>
+    </div>
+    {% endif %}
+    </form>
+</div>
 
 {% endblock%}
 
