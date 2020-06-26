@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, session
 from .Ahorcado import Ahorcado
 from project.models import db, Jugadas
 from sqlalchemy import desc
@@ -10,11 +10,8 @@ def ran(stringLength=8):
     return ''.join(random.choice(letters) for i in range(stringLength))
 
 main = Blueprint('main', __name__)
-#a = []
-a = Ahorcado('')
-#x = Ahorcado(ran)
-#a.append(x)
-#b = len(a)
+a = Ahorcado()
+
 
 @main.route('/')
 def home():
@@ -31,41 +28,47 @@ def play():
 
 @main.route('/play/alias', methods=['POST'])
 def play_alias():
-    a.limpiar_variables_total
-    name = request.form.get('name')
-    a.ingresa_alias(name)
-    return render_template("play.html", alias=a.alias)
+    #a.limpiar_variables_total
+    #name = request.form.get('name')
+    #a.ingresa_alias(name)
+    session.clear()
+    session["user"] = request.form.get('name')
+    session["puntaje"] = 0
+    session["letrasing"] = ''
+    session["intentos"] = 5
+    return render_template("play.html", alias=session["user"])
 
 @main.route('/play/dificultad', methods=['POST'])
 def play_dificultad():
     dif = request.form.get('dif')
     if not dif:
         dif = 1
-    a.carga_dificultad(dif)
-    a.carga_universo()
-    a.intentos = 6 - a.dificultad
-    a.elegir_palabra()
-    a.crea_guia(a.palabra)
-    a.muestra_guia(a.guia)
-    return render_template("play.html", dificultad=a.dificultad,alias=a.alias, intentos = a.intentos, palabra = a.palabra, largo = a.lpalabra, guia = a.guia)
+    session["dificultad"] = a.carga_dificultad(dif)
+    session["palabra"] = a.carga_universo()
+    session["intentos"] = 6 - a.dificultad
+    session["largo"] = a.largo_palabra(session["palabra"])
+    #session["palabra"] = a.elegir_palabra()
+    session["guia"] = a.crea_guia(session["palabra"])
+    session["guiaM"] = a.muestra_guia(session["guia"])
+    return render_template("play.html", dificultad=session["dificultad"],alias=session["user"], intentos = session["intentos"], palabra = session["palabra"], largo = session["largo"], guia = session["guia"])
 
 @main.route('/play/ing', methods=['POST'])
 def play_ingreso():
-    ing = request.form.get('ingreso')
-    if len(ing) > 1:
-        if ing.upper() == a.palabra:
-            a.dev_puntaje(8)
+    session["ing"] = request.form.get('ingreso')
+    if len(session["ing"]) > 1:
+        if session["ing"].upper() == session["palabra"]:
+            session["puntaje"] = a.dev_puntaje(8)
             a.limpiar_variables_parcial()
         else:
-            print(a.intentos)
-            a.intentos = 0
-            a.dev_puntaje(0)
+            print(session["intentos"])
+            session["intentos"] = 0
+            session["puntaje"] = a.dev_puntaje(0)
     else:
-        a.ingresa_letra(ing.upper())
-        if a.palabra == a.guia:
-            a.dev_puntaje(a.intentos) 
+        a.ingresa_letra(session["ing"].upper())
+        if session["palabra"] == session["guia"]:
+            session["puntaje"] = a.dev_puntaje(session["intentos"]) 
             a.limpiar_variables_parcial()
-    return render_template("play.html", puntaje = a.puntaje, letra = ing, dificultad=a.dificultad,alias=a.alias, intentos = a.intentos, palabra = a.palabra, largo = a.lpalabra, guia = a.guia, leting = a.letrasing)
+    return render_template("play.html", puntaje = session["puntaje"], letra = session["ing"], dificultad=session["dificultad"],alias=session["user"], intentos =session["intentos"], palabra = session["palabra"], largo = session["largo"], guia = session["guia"], leting = session["letrasing"])
 
 @main.route('/rank')
 def rank():
@@ -81,7 +84,7 @@ def rank():
 
 @main.route('/play/rank')
 def altaRank():
-    new_jugada= Jugadas(nombre=a.alias, puntaje= a.puntaje )
+    new_jugada= Jugadas(nombre=session["user"], puntaje= session["puntaje"] )
     db.session.add(new_jugada)
     db.session.commit()
     return render_template("Ranking.html")

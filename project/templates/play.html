@@ -117,11 +117,13 @@
                               <a class="btn btn-primary btn-lg" href="{{ url_for('main.play') }}" role="button">Volver a Jugar</a>
                             </div>
                         </div>
+                        {% if puntaje > 0 %}
                         <div class="col-md-6"> 
                             <div>
                                 <a class="btn btn-primary btn-lg" href="{{ url_for('main.altaRank') }}" role="button">Registrar Partida</a>
                             </div>
                         </div>
+                        {% endif %}
                     {% endif %}
                     {% endif %}
                     {% endif %}
