@@ -109,16 +109,16 @@ class Ahorcado():
         print(f'------------------Letra: {a}')
         self.letrasing = self.letrasing  + a + '-'
         session["letrasing"] = session["letrasing"] + a + '-'
-        if a in self.palabra:
+        if a in session["palabra"]:
             print('1')
-            for i in range(self.lpalabra):
-                if self.palabra[i] == a:
+            for i in range(session["largo"]):
+                if session["palabra"][i] == a:
                     self.guia = self.guia[:i] + a + self.guia[i+1:]
                     session["guia"] = session["guia"][:i] + a + session["guia"][i+1:]
         else: 
             self.intentos = self.intentos -1
             session["intentos"] = session["intentos"] - 1
-        return self.guia
+        return session["guia"]
 
     def ingresa_alias(self, a):
         self.alias = a
