@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">  
+    <h1 class="display-4">Ranking</h1>
+    <hr class="my-4">
+    <p class="lead">
+        Top 10 de Mejores Jugadores de Ahorcado!
+    </p>
+    <hr class="my-4">
+    <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Alias</th>
+            <th scope="col">Puntaje</th>
+            <th scope="col">Fecha de partida</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for a in partidas%}
+            <td>{{a[0]}} </td>
+            <td> {{a[1]}} </td>
+            <td> {{a[2]}} </td>
+            <td> {{a[3]}} </td>
+            <tr></tr>
+            {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+{% endblock%}

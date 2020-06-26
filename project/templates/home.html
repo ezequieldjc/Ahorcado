@@ -4,6 +4,7 @@
 
 <div class="jumbotron">
   <h1 class="display-4">Ahorcado!</h1>
+  <hr class="my-4">
   <p class="lead">
   El Ahorcado es un juego de adivinanzas de lápiz y papel, hoy transformado en formato Web. 
    </p>
@@ -13,11 +14,10 @@
   <p class="lead">
     Cada vez que el jugador falle en una letra, perdera intentos, en caso de quedar sin intentos o arriesgar una palabra incorrecta quedara ¡AHORCADO!
   </p>
-  <div>
+  <hr class="my-4">
     <div>
       <a class="btn btn-primary btn-lg" href="{{ url_for('main.play') }}" role="button">Juguemos</a>
     </div>
-  </div>
 </div>
 
 {% endblock%}

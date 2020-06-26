@@ -2,32 +2,134 @@
 
 {% block content %}
 
-<div class="column is-4 is-offset-4">
-    <form method="POST" action="/play/alias">
-    {{ alias }}
-    {% if not alias%}
-    <h3 class="title">Carga tu Alias</h3>
-    <div class="box">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <div class="notification is-danger">
-                {{ messages[0] }}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="jumbotron">
+                {% if alias%}
+                <h3 class="title">ALIAS: {{ alias }}</h3>
+                <hr class="my-4">
+                {% endif %}
+                {% if dificultad %}
+                <p class="lead">DIFICULTAD: {{ dificultad }}</p>
+                {% endif %}
+                {% if intentos %}{% if dificultad %}
+                <p class="lead">INTENTOS: {{ intentos }}</p>
+                {% endif %}{% endif %}
+                <!--
+                {% if palabra %}
+                <p class="lead">PALABRA: {{ palabra }}</p>
+                {% endif %}
+                -->
+                {% if largo %}
+                <p class="lead">LARGO: {{ largo }}</p>
+                {% endif %}
+                {% if guia %}
+                <p class="lead">GUIA: {{ guia }}</p>
+                {% endif %}
+                {% if leting %}{% if dificultad < 3 %}
+                <p class="lead">LETRAS INGRESADAS: {{ leting }}</p>
+                {% endif %}{% endif %}
+                {% if puntaje %}
+                <p class="lead">PUNTAJE: {{ puntaje }}</p>
+                {% endif %}
             </div>
-        {% endif %}
-        {% endwith %}
-            <div class="field">
-                <div class="control">
-                    <input class="input is-large" name="name" placeholder="Alias de jugador" autofocus="">
+        </div>
+        <div class="col-md-6">  
+            <div class="jumbotron">
+                <div class="column is-4 is-offset-4">
+                    <form method="POST" action="/play/alias">
+                    {% if not alias%}
+                    <h3 class="title">Carga tu Alias</h3>
+                    <hr class="my-4">
+                    <div class="box">
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="notification is-danger">
+                                {{ messages[0] }}
+                            </div>
+                        {% endif %}
+                        {% endwith %}
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" name="name" placeholder="Alias de jugador" autofocus="">
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <div class="field">
+                                <button class="btn btn-primary btn-lg">Siguiente</button>
+                            </div>
+                    </div>
+                    {% endif %}
+                    </form>
+                    {% if alias%}
+                    {% if not dificultad%}
+                    <form action="/play/dificultad" method="POST">
+                        <div class="box">
+                            <h3 class="title">Selecciona la dificultad</h3>
+                            <hr class="my-4">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Facil" value="1" name="dif" class="custom-control-input">
+                                <label class="custom-control-label" for="Facil">Facil</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Medio" value="2" name="dif" class="custom-control-input">
+                                <label class="custom-control-label" for="Medio">Medio</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="Dificil" value="3" name="dif" class="custom-control-input">
+                                <label class="custom-control-label" for="Dificil">Dificil</label>
+                            </div>
+                            <hr class="my-4">
+                            <button class="btn btn-primary btn-lg">Siguiente</button>
+                        </div>
+                    </form>
+                    {% endif %}
+                    {% endif %}
+                    </form>
+                    {% if alias%}
+                    {% if dificultad%}
+                    {% if intentos > 0 %}
+                    <form action="/play/ing" method="POST">
+                        <div class="box">
+                            <h3 class="title">Ingresa Letra o Arriega Palabra</h3>
+                            <hr class="my-4">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" name="ingreso" placeholder="Letra o Palabra" autofocus="">
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <div class="field">
+                                <button class="btn btn-primary btn-lg">Arriesga</button>
+                            </div>
+                        </div>
+                    </form>
+                    {% else %}
+                    <p class="lead">La palabra era: {{ palabra }}</p>
+                    <h1 class="title">Hasta aca llegaste {{ alias }}... </h1>
+                    </br>
+                    <h5 class="title">Tu puntaje fue de: {{ puntaje }} puntos. </h5>
+                    <hr class="my-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                              <a class="btn btn-primary btn-lg" href="{{ url_for('main.play') }}" role="button">Volver a Jugar</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6"> 
+                            <div>
+                                <a class="btn btn-primary btn-lg" href="{{ url_for('main.altaRank') }}" role="button">Registrar Partida</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endif %}
                 </div>
             </div>
-            <div class="field">
-                <button class="button is-block is-info is-large is-fullwidth">Jugar</button>
-            </div>
+        </div>
     </div>
-    {% endif %}
-    </form>
 </div>
-
 {% endblock%}
 
 
