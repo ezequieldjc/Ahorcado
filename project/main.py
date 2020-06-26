@@ -10,10 +10,11 @@ def ran(stringLength=8):
     return ''.join(random.choice(letters) for i in range(stringLength))
 
 main = Blueprint('main', __name__)
-a = []
-x = Ahorcado(ran)
-a.append(x)
-b = len(a)
+#a = []
+a = Ahorcado(ran)
+#x = Ahorcado(ran)
+#a.append(x)
+#b = len(a)
 
 @main.route('/')
 def home():
