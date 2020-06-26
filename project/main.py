@@ -11,7 +11,7 @@ def ran(stringLength=8):
 
 main = Blueprint('main', __name__)
 #a = []
-a = Ahorcado(ran)
+a = Ahorcado('')
 #x = Ahorcado(ran)
 #a.append(x)
 #b = len(a)
