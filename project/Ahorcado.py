@@ -4,15 +4,17 @@ from os import system
 from project.models import db, Universo
 
 class Ahorcado():
-    palabras = []
-    palabra = ''
-    guia = ''
-    lpalabra = 0
-    puntaje = 0
-    intentos = 3
-    alias = ''
-    dificultad = 0
-    letrasing = ''
+
+    def __init__(self,alias):
+        self.palabras = []
+        self.palabra = ''
+        self.guia = ''
+        self.lpalabra = 0
+        self.puntaje = 0
+        self.intentos = 3
+        self.alias = alias
+        self.dificultad = 0
+        self.letrasing = ''
 
     def carga_dificultad(self, a):
         self.dificultad = int(a)

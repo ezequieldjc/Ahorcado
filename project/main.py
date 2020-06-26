@@ -5,7 +5,7 @@ from sqlalchemy import desc
 
 
 main = Blueprint('main', __name__)
-a = Ahorcado()
+a = Ahorcado('name')
 
 @main.route('/')
 def home():
@@ -20,7 +20,7 @@ def play():
     a.limpiar_variables_total
     return render_template("play.html")
 
-@main.route('/play/alias', methods=['POST'])
+@main.route('/play', methods=['POST'])
 def play_alias():
     a.limpiar_variables_total
     name = request.form.get('name')
