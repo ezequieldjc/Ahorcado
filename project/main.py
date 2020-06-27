@@ -72,6 +72,7 @@ def play_ingreso():
 
 @main.route('/rank')
 def rank():
+    session.clear()
     rank=Jugadas.query.order_by(desc(Jugadas.puntaje)).limit(10).all()
     partidas = []
     date_str = ''
