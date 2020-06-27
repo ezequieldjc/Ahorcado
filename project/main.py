@@ -15,14 +15,17 @@ a = Ahorcado()
 
 @main.route('/')
 def home():
+    session.clear()
     return render_template("home.html")
 
 @main.route('/about', strict_slashes=False)
 def about():
+    session.clear()
     return render_template("about.html")
 
 @main.route('/play', strict_slashes=False)
 def play():
+    session.clear()
     a.limpiar_variables_total
     return render_template("play.html")
 
@@ -94,6 +97,7 @@ def altaRank():
         partidas.append([c,i.nombre, i.puntaje, date_str])
         c=c+1
     new_jugada= Jugadas(nombre=session["user"], puntaje= session["puntaje"] )
+    session.clear()
     db.session.add(new_jugada)
     db.session.commit()
     return render_template("Ranking.html", partidas=partidas)
