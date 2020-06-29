@@ -95,7 +95,8 @@ def altaRank():
     for i in rank:
         date_str = i.fecha.strftime('%d/%m/%Y, %H:%M')
         partidas.append([c,i.nombre, i.puntaje, date_str])
-        c=c+1
+        if c < 10:
+            c=c+1
     new_jugada= Jugadas(nombre=session["user"], puntaje= session["puntaje"] )
     session.clear()
     db.session.add(new_jugada)
