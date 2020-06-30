@@ -1,5 +1,5 @@
 import pytest
-from project.Ahorcado import Ahorcado
+from project.ahorcado import Ahorcado
 
 def test_prueba():
     a = Ahorcado
