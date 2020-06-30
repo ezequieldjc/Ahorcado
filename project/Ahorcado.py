@@ -21,6 +21,9 @@ class Ahorcado():
     def carga_dificultad(self, a):
         self.dificultad = int(a)
         return self.dificultad
+    
+    def devuelve_dificultad(self)
+        return this.dificultad
         
     def carga_universo (self):
         print('------------------Cargando Palabra...')
