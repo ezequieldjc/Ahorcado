@@ -1,5 +1,5 @@
 import pytest
-from project.ahorcado import Ahorcado
+from project.Ahorcado import Ahorcado
 
 def test_prueba():
     a = Ahorcado
@@ -17,7 +17,7 @@ def  test_largoPalabra():
     assert expected == actual
 
 #Pruebo guia 
-def test_letra_existe(self):
+def test_letra_existe():
     a = Ahorcado
     a.limpiar_variables(a)
     a.crea_guia(a,'CHAPA')
