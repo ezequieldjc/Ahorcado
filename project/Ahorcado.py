@@ -23,7 +23,7 @@ class Ahorcado():
         return self.dificultad
     
     def devuelve_dificultad(self)
-        return this.dificultad
+        return self.dificultad
         
     def carga_universo (self):
         print('------------------Cargando Palabra...')
