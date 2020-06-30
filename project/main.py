@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session
-from .Ahorcado import Ahorcado
+from .ahorcado import Ahorcado
 from project.models import db, Jugadas
 from sqlalchemy import desc
 import random

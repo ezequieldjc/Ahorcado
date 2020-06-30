@@ -1,5 +1,4 @@
 import unittest
-from ./Ahorcado import Ahorcado
 
 class TestSprint1(unittest.TestCase):
  #Pruebo la cantidad de palabras en el universo 

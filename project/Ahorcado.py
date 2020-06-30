@@ -22,7 +22,7 @@ class Ahorcado():
         self.dificultad = int(a)
         return self.dificultad
     
-    def devuelve_dificultad(self)
+    def devuelve_dificultad(self):
         return self.dificultad
         
     def carga_universo (self):
