@@ -1,6 +1,6 @@
 import pytest
 #from project import Ahorcado
-from .. import Ahorcado
+from Ahorcado import Ahorcado
 
 def test_prueba():
     a = Ahorcado
@@ -24,4 +24,4 @@ def test_letra_existe(self):
     a.crea_guia(a,'CHAPA')
     actual = a.ingresa_letra(a,'A')
     expected = '__A_A'
-    assert expected = actual
+    assert expected == actual
