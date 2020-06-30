@@ -1,5 +1,6 @@
 import pytest
-from project import Ahorcado
+#from project import Ahorcado
+from .. import Ahorcado
 
 def test_prueba():
     a = Ahorcado
@@ -15,3 +16,12 @@ def  test_largoPalabra():
     actual = a.largo_palabra(a, 'Gato')
     expected = 4
     assert expected == actual
+
+#Pruebo guia 
+def test_letra_existe(self):
+    a = Ahorcado
+    a.limpiar_variables(a)
+    a.crea_guia(a,'CHAPA')
+    actual = a.ingresa_letra(a,'A')
+    expected = '__A_A'
+    assert expected = actual
