@@ -34,14 +34,14 @@ def test_puntaje_acierto():
 
 def test_caracteres_a_insertar():
     a = Ahorcado
-    a.limpiar_variables(a)
+    a.limpiar_variables_total(a)
     actual = a.crea_guia(a,'CHAPA')
     expected = '_____'
     assert expected == actual
 
 def test_intentos_restantes(self):
     a = Ahorcado
-    a.limpiar_variables(a)
+    a.limpiar_variables_total(a)
     a.crea_guia(a,'CHAPA')
     actual = a.getIntentos(a)
     a.ingresa_letra (a, 'B')
@@ -56,7 +56,7 @@ def test_ingresa_alias(self):
 
 def test_cambio_puntaje(self):
     a = Ahorcado
-    a.limpiar_variables(a)
+    a.limpiar_variables_total(a)
     a.carga_dificultad(a, 2)
     actual = a.dev_puntaje (a, 3)
     expected = 60
