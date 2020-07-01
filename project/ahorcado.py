@@ -95,7 +95,7 @@ class Ahorcado():
     def crea_guia(self, ba):
         self.guia = ''
         self.palabra = ba
-        self.lpalabra = self.largo_palabra(ba) 
+        self.lpalabra = len(ba) 
         for x in range(self.lpalabra):
             self.guia = self.guia + '*'  
         return self.guia
