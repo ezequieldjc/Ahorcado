@@ -39,14 +39,14 @@ def  test_largoPalabra():
 #    expected = '_____'
 #    assert expected == actual
 
-def test_intentos_restantes():
-    a = Ahorcado
-    a.limpiar_variables_total(a)
-    a.crea_guia(a,'CHAPA')
-    actual = a.getIntentos(a)
-    a.ingresa_letra (a, 'B')
-    expected = a.getIntentos(a) + 1
-    assert actual == expected
+#def test_intentos_restantes():
+#    a = Ahorcado
+#    a.limpiar_variables_total(a)
+#    a.crea_guia(a,'CHAPA')
+#    actual = a.getIntentos(a)
+#    a.ingresa_letra (a, 'B')
+#    expected = a.getIntentos(a) + 1
+#    assert actual == expected
 
 def test_ingresa_alias():
     a = Ahorcado
@@ -54,10 +54,10 @@ def test_ingresa_alias():
     expected = 'ALIAS'
     assert actual == expected
 
-def test_cambio_puntaje():
-    a = Ahorcado
-    a.limpiar_variables_total(a)
-    a.carga_dificultad(a, 2)
-    actual = a.dev_puntaje (a, 3)
-    expected = 60
-    assert actual == expected
+#def test_cambio_puntaje():
+#    a = Ahorcado
+#    a.limpiar_variables_total(a)
+#    a.carga_dificultad(a, 2)
+#    actual = a.dev_puntaje (a, 3)
+#    expected = 60
+#    assert actual == expected

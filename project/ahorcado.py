@@ -124,6 +124,6 @@ class Ahorcado():
         return session["guia"]
 
     def ingresa_alias(self, a):
-        self.alias = a
+        self.alias = a.upper()
         return self.alias
         
