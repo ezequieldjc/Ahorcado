@@ -24,3 +24,40 @@ def test_letra_existe():
     actual = a.ingresa_letra(a,'A')
     expected = '__A_A'
     assert expected == actual
+
+def test_puntaje_acierto():
+    a = Ahorcado
+    a.limpiar_variables(a)
+    actual = a.dev_puntaje(a,8)
+    expected = 200
+    assert expected == actual
+
+def test_caracteres_a_insertar():
+    a = Ahorcado
+    a.limpiar_variables(a)
+    actual = a.crea_guia)(a,'CHAPA')
+    expected = '_____'
+    assert expected == actual
+
+def test_intentos_restantes(self):
+    a = Ahorcado
+    a.limpiar_variables(a)
+    a.crea_guia(a,'CHAPA')
+    actual = a.getIntentos(a)
+    a.ingresa_letra (a, 'B')
+    expected = a.getIntentos(a) + 1
+    assert actual == expected
+
+def test_ingresa_alias(self):
+    a = Ahorcado
+    actual =  a.ingresa_alias(a,'aLiAs')    
+    expected = 'ALIAS'
+    assert actual == expected
+
+def test_cambio_puntaje(self):
+    a = Ahorcado
+    a.limpiar_variables(a)
+    a.carga_dificultad(a, 2)
+    actual = a.dev_puntaje (a, 3)
+    expected = 60
+    assert actual == expected
