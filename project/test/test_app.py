@@ -35,7 +35,7 @@ def test_puntaje_acierto():
 def test_caracteres_a_insertar():
     a = Ahorcado
     a.limpiar_variables(a)
-    actual = a.crea_guia)(a,'CHAPA')
+    actual = a.crea_guia(a,'CHAPA')
     expected = '_____'
     assert expected == actual
 
