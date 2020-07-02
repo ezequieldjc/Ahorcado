@@ -6,6 +6,8 @@ def create_app(config_name):
 
     app.secret_key = "1234"
 
+    app.config['WTF_CSRF_ENABLED'] = False # Sensitive
+
     app.config['SECRET_KEY'] = '1eab0cc55df07f487a356cc0df610aa365d6d69aaaf1eb399da61f20104d06aa'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://qnmpruhxfeoklo:1eab0cc55df07f487a356cc0df610aa365d6d69aaaf1eb399da61f20104d06aa@ec2-52-0-155-79.compute-1.amazonaws.com:5432/d7k9i0f2ad0li0'
 

@@ -5,9 +5,6 @@ from sqlalchemy import desc
 import random
 import string
 
-def ran(stringLength=8):
-    letters = string.ascii_lowercase
-    return ''.join(random.choice(letters) for i in range(stringLength))
 
 main = Blueprint('main', __name__)
 a = Ahorcado()
@@ -102,5 +99,4 @@ def altaRank():
     db.session.add(new_jugada)
     db.session.commit()
     return render_template("Ranking.html", partidas=partidas)
-
-
+    

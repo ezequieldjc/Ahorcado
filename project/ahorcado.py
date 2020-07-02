@@ -89,7 +89,7 @@ class Ahorcado():
         self.dificultad = 0
         self.letrasing = ''
 
-    def getIntentos(self):
+    def get_intentos(self):
         return self.intentos
 
     def crea_guia(self, ba):

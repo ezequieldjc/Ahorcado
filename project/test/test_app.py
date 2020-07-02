@@ -43,9 +43,9 @@ def  test_largoPalabra():
 #    a = Ahorcado
 #    a.limpiar_variables_total(a)
 #    a.crea_guia(a,'CHAPA')
-#    actual = a.getIntentos(a)
+#    actual = a.get_intentos(a)
 #    a.ingresa_letra (a, 'B')
-#    expected = a.getIntentos(a) + 1
+#    expected = a.get_intentos(a) + 1
 #    assert actual == expected
 
 def test_ingresa_alias():
