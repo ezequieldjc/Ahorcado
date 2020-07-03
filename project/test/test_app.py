@@ -10,7 +10,7 @@ def test_prueba():
     assert expected == actual
 
 #Pruebo largo de una palabra
-def  test_largoPalabra():
+def  test_largo_palabra():
     a = Ahorcado
     actual = a.largo_palabra(a, 'Gato')
     expected = 4

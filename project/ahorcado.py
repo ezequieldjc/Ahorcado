@@ -56,7 +56,7 @@ class Ahorcado():
         elif a ==5 or session["intentos"]==5:
             session["puntaje"] = session["puntaje"] + 10 * session["dificultad"]*2
         elif a ==0 or self.intentos==0:
-            session["puntaje"] = session["puntaje"]                              
+            session["puntaje"] = session["puntaje"] * 1                               
         session["intentos"] = 0
         return session["puntaje"] 
 

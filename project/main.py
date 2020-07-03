@@ -9,6 +9,7 @@ import string
 main = Blueprint('main', __name__)
 a = Ahorcado()
 
+playhtml = "play.html"
 
 @main.route('/')
 def home():
@@ -36,7 +37,7 @@ def play_alias():
     session["puntaje"] = 0
     session["letrasing"] = ''
     session["intentos"] = 5
-    return render_template("play.html", alias=session["user"])
+    return render_template(playhtml, alias=session["user"])
 
 @main.route('/play/dificultad', methods=['POST'])
 def play_dificultad():
@@ -50,7 +51,7 @@ def play_dificultad():
     #session["palabra"] = a.elegir_palabra()
     session["guia"] = a.crea_guia(session["palabra"])
     session["guiaM"] = a.muestra_guia(session["guia"])
-    return render_template("play.html", dificultad=session["dificultad"],alias=session["user"], intentos = session["intentos"], palabra = session["palabra"], largo = session["largo"], guia = session["guia"])
+    return render_template(playhtml, dificultad=session["dificultad"],alias=session["user"], intentos = session["intentos"], palabra = session["palabra"], largo = session["largo"], guia = session["guia"])
 
 @main.route('/play/ing', methods=['POST'])
 def play_ingreso():
@@ -68,7 +69,7 @@ def play_ingreso():
         if session["palabra"] == session["guia"]:
             session["puntaje"] = a.dev_puntaje(session["intentos"]) 
             a.limpiar_variables_parcial()
-    return render_template("play.html", puntaje = session["puntaje"], letra = session["ing"], dificultad=session["dificultad"],alias=session["user"], intentos =session["intentos"], palabra = session["palabra"], largo = session["largo"], guia = session["guia"], leting = session["letrasing"])
+    return render_template(playhtml, puntaje = session["puntaje"], letra = session["ing"], dificultad=session["dificultad"],alias=session["user"], intentos =session["intentos"], palabra = session["palabra"], largo = session["largo"], guia = session["guia"], leting = session["letrasing"])
 
 @main.route('/rank')
 def rank():
@@ -84,7 +85,7 @@ def rank():
     return render_template("Ranking.html", partidas=partidas)
 
 @main.route('/play/rank')
-def altaRank():
+def alta_rank():
     rank=Jugadas.query.order_by(desc(Jugadas.puntaje)).limit(10).all()
     partidas = []
     date_str = ''

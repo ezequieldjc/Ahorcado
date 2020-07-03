@@ -16,11 +16,6 @@
                 {% if intentos %}{% if dificultad %}
                 <p class="lead">INTENTOS: {{ intentos }}</p>
                 {% endif %}{% endif %}
-                <!--
-                {% if palabra %}
-                <p class="lead">PALABRA: {{ palabra }}</p>
-                {% endif %}
-                -->
                 {% if largo %}
                 <p class="lead">LARGO: {{ largo }}</p>
                 {% endif %}
@@ -120,7 +115,7 @@
                         {% if puntaje > 0 %}
                         <div class="col-md-6"> 
                             <div>
-                                <a class="btn btn-primary btn-lg" href="{{ url_for('main.altaRank') }}" role="button">Registrar Partida</a>
+                                <a class="btn btn-primary btn-lg" href="{{ url_for('main.alta_rank') }}" role="button">Registrar Partida</a>
                             </div>
                         </div>
                         {% endif %}

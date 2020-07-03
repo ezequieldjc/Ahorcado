@@ -73,7 +73,7 @@ class Ahorcado(db.Model):
         elif a ==5 or self.intentos==5:
             self.puntaje = self.puntaje + 10 * self.dificultad*2
         elif a ==0 or self.intentos==0:
-            self.puntaje = self.puntaje                              
+            self.puntaje = self.puntaje * 1                              
         self.intentos = 0
         return self.puntaje 
 
