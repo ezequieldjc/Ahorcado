@@ -78,6 +78,15 @@ class Ahorcado():
         session["dificultad"] = None
         session["largo"] = None
     
+    def limpiar_variables_parcial_obj(self):
+        self.palabras = []
+        self.palabra = ''
+        self.guia = ''
+        self.lpalabra = 0
+        self.intentos = 5
+        self.dificultad = 0
+        self.letrasing = ''
+
     def limpiar_variables_total(self):
         self.palabras = []
         self.palabra = ''
