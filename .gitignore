@@ -1,2 +1,4 @@
 # Código gitignore para evitar procesar el directorio de las dependencias
 venv/
+__pycache__/
+project/__pycache__/
