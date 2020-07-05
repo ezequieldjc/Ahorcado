@@ -22,7 +22,7 @@ def test_letra_existe():
     a.limpiar_variables_total(a)
     a.crea_guia(a,'CHAPA')
     actual = a.ingresa_letra_obj(a,'A')
-    expected = '__A_A'
+    expected = '**A*A'
     assert expected == actual
 
 #def test_puntaje_acierto():
