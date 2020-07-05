@@ -4,11 +4,14 @@ from wsgiref import simple_server
 from wsgiref.simple_server import WSGIRequestHandler
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from . import app
 
 
-# Use the chrome driver specific to your version of Chrome browser and put it in ./driver directory
-CHROME_DRIVER = os.path.join(os.path.join(os.path.dirname(__file__), 'driver'), 'chromedriver.exe')
+#Driver para Chrome v83
+#https://chromedriver.storage.googleapis.com/index.html?path=83.0.4103.39/
+#Modificar variable driver segun la ruta personal
+driver = r"C:\chromedriver_win32\chromedriver.exe"
+
+app = "https://agiles2020-ahorcado.herokuapp.com/play/"
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -23,7 +26,7 @@ def before_all(context):
     context.pa_app = threading.Thread(target=context.server.serve_forever)
     context.pa_app.start()
 
-    context.browser = webdriver.Chrome(options=chrome_options, executable_path=CHROME_DRIVER)
+    context.browser = webdriver.Chrome(options=chrome_options, executable_path=driver)
     context.browser.set_page_load_timeout(time_to_wait=200)
 
 

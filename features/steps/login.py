@@ -10,12 +10,11 @@ def step_impl(context):
 
 @when(u'Hago clic en el botón Siguiente')
 def step_impl(context):
-    context.browser.find_element_by_xpath(f"//input[@type='submit' and @value='Submit']").click()
+    context.browser.find_element_by_xpath(f"/html/body/div/div/div/div[2]/div/div/form/div/div[2]/button").click()
 
 
 @then(u'El inicio del juego es exitoso')
 def step_impl(context):
-    assert context.browser.current_url == 'https://agiles2020-ahorcado.herokuapp.com/play/aliasB'
-    assert 'Login successful !!' in context.browser.page_source
+    assert context.browser.current_url == 'https://agiles2020-ahorcado.herokuapp.com/play/alias'
 
 
