@@ -17,13 +17,13 @@ def  test_largo_palabra():
     assert expected == actual
 
 #Pruebo guia 
-#def test_letra_existe():
-#    a = Ahorcado
-#    a.limpiar_variables_total(a)
-#    a.crea_guia(a,'CHAPA')
-#    actual = a.ingresa_letra(a,'A')
-#    expected = '__A_A'
-#    assert expected == actual
+def test_letra_existe():
+    a = Ahorcado
+    a.limpiar_variables_total(a)
+    a.crea_guia(a,'CHAPA')
+    actual = a.ingresa_letra_obj(a,'A')
+    expected = '__A_A'
+    assert expected == actual
 
 #def test_puntaje_acierto():
 #    a = Ahorcado
