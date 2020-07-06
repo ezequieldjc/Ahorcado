@@ -6,7 +6,7 @@ import time
 #Driver para Chrome v83
 #https://chromedriver.storage.googleapis.com/index.html?path=83.0.4103.39/
 
-class prueba_unittest(unittest.TestCase):
+class PruebaUnittest(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=r"C:\chromedriver_win32\chromedriver.exe") 
 
