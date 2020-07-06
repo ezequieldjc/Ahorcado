@@ -25,12 +25,12 @@ def test_letra_existe():
     expected = '**A*A'
     assert expected == actual
 
-#def test_puntaje_acierto():
-#    a = Ahorcado
-#    a.limpiar_variables_total(a)
-#    actual = a.dev_puntaje(a,8)
-#    expected = 200
-#    assert expected == actual
+def test_puntaje_acierto():
+    a = Ahorcado
+    a.limpiar_variables_total(a)
+    actual = a.dev_puntaje_obj(a,8)
+    expected = 200
+    assert expected == actual
 
 #def test_caracteres_a_insertar():
 #    a = Ahorcado
