@@ -37,17 +37,17 @@ def test_caracteres_a_insertar():
     a = Ahorcado
     a.limpiar_variables_total(a)
     actual = a.crea_guia(a,'CHAPA')
-    expected = '_____'
+    expected = '*****'
     assert expected == actual
 
-#def test_intentos_restantes():
-#    a = Ahorcado
-#    a.limpiar_variables_total(a)
-#    a.crea_guia(a,'CHAPA')
-#    actual = a.get_intentos(a)
-#    a.ingresa_letra (a, 'B')
-#    expected = a.get_intentos(a) + 1
-#    assert actual == expected
+def test_intentos_restantes():
+    a = Ahorcado
+    a.limpiar_variables_total(a)
+    a.crea_guia(a,'CHAPA')
+    actual = a.get_intentos(a)
+    a.ingresa_letra (a, 'B')
+    expected = a.get_intentos(a) + 1
+    assert actual == expected
 
 def test_ingresa_alias():
     a = Ahorcado
