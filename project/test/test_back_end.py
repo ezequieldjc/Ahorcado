@@ -28,8 +28,9 @@ def test_letra_existe():
 def test_puntaje_acierto():
     a = Ahorcado
     a.limpiar_variables_total(a)
+    a.carga_dificultad = 3
     actual = a.dev_puntaje_obj(a,8)
-    expected = 200
+    expected = 90
     assert expected == actual
 
 #def test_caracteres_a_insertar():
