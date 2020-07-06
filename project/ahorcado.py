@@ -33,12 +33,6 @@ class Ahorcado():
         print(f'------------------Palabra Cargada: {pal}')
         return pal
     
-    #def elegir_palabra(self):
-    #    print('------------------Cargando Palabra ')
-    #    self.palabra = random.choice(self.palabras)
-    #    print('------------------Palabra Cargada ')
-    #    return self.palabra
-
     def cuenta_universo (self):  
         return len(self.palabras)
 

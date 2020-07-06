@@ -29,9 +29,6 @@ def play():
 
 @main.route('/play/alias', methods=['POST'])
 def play_alias():
-    #a.limpiar_variables_total
-    #name = request.form.get('name')
-    #a.ingresa_alias(name)
     session.clear()
     session["user"] = request.form.get('name')
     session["puntaje"] = 0
@@ -48,7 +45,6 @@ def play_dificultad():
     session["palabra"] = a.carga_universo()
     session["intentos"] = 6 - a.dificultad
     session["largo"] = a.largo_palabra(session["palabra"])
-    #session["palabra"] = a.elegir_palabra()
     session["guia"] = a.crea_guia(session["palabra"])
     session["guiaM"] = a.muestra_guia(session["guia"])
     return render_template(playhtml, dificultad=session["dificultad"],alias=session["user"], intentos = session["intentos"], palabra = session["palabra"], largo = session["largo"], guia = session["guia"])
