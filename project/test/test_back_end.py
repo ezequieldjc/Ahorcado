@@ -45,9 +45,9 @@ def test_intentos_restantes():
     a.limpiar_variables_total(a)
     a.crea_guia(a,'CHAPA')
     actual = a.get_intentos(a)
-    a.ingresa_letra (a, 'B')
-    expected = a.get_intentos(a) + 1
-    assert actual == expected
+    a.ingresa_letra_obj (a, 'B')
+    expected = a.get_intentos(a)
+    assert actual == expected + 1
 
 def test_ingresa_alias():
     a = Ahorcado
