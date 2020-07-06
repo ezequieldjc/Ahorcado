@@ -38,7 +38,7 @@ def test_puntaje_acierto_dif2():
     a.limpiar_variables_total(a)
     a.dificultad = 2
     actual = a.dev_puntaje_obj(a,8)
-    expected = 120
+    expected = 100
     assert expected == actual
 
 def test_caracteres_a_insertar():
