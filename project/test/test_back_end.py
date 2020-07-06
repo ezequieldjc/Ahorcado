@@ -55,10 +55,10 @@ def test_ingresa_alias():
     expected = 'ALIAS'
     assert actual == expected
 
-#def test_cambio_puntaje():
-#    a = Ahorcado
-#    a.limpiar_variables_total(a)
-#    a.carga_dificultad(a, 2)
-#    actual = a.dev_puntaje (a, 3)
-#    expected = 60
-#    assert actual == expected
+def test_cambio_puntaje():
+    a = Ahorcado
+    a.limpiar_variables_total(a)
+    a.dificultad = 2
+    actual = a.dev_puntaje_obj (a, 3)
+    expected = 60
+    assert actual == expected
