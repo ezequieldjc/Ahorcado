@@ -62,8 +62,7 @@ class Ahorcado():
 
     def dev_puntaje_obj (self, a):
         if a ==8:
-            ##self.puntaje = self.puntaje + 15 * self.dificultad*2 
-            self.puntaje = 90
+            self.puntaje = self.puntaje + 15 * self.dificultad*2 
         if a ==1 or self.intentos==1:
             self.puntaje = self.puntaje + 2 * self.dificultad*2
         elif a ==2 or self.intentos==2:

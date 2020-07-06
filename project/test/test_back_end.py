@@ -28,18 +28,17 @@ def test_letra_existe():
 def test_puntaje_acierto():
     a = Ahorcado
     a.limpiar_variables_total(a)
-    #a.carga_dificultad = 3
     a.dificultad = 3
     actual = a.dev_puntaje_obj(a,8)
-    expected = 90
+    expected = 150
     assert expected == actual
 
-#def test_caracteres_a_insertar():
-#    a = Ahorcado
-#    a.limpiar_variables_total(a)
-#    actual = a.crea_guia(a,'CHAPA')
-#    expected = '_____'
-#    assert expected == actual
+def test_caracteres_a_insertar():
+    a = Ahorcado
+    a.limpiar_variables_total(a)
+    actual = a.crea_guia(a,'CHAPA')
+    expected = '_____'
+    assert expected == actual
 
 #def test_intentos_restantes():
 #    a = Ahorcado
