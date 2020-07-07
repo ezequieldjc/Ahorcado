@@ -7,13 +7,3 @@ install:
 #Test
 script:
   - pytest
-
-addons:
-sonarcloud:
-  organization: "gabicapitanelli"
-  token:
-    #secure: $SONAR_TOKEN #"eabbd7a95fd919dc469e6d74fc589c22f8f86a44" # encrypted value of your token
-
-script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN
