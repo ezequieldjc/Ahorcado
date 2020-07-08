@@ -12,7 +12,7 @@ from selenium.webdriver.chrome.options import Options
 #Modificar variable driver segun la ruta personal
 
 #driver = r"C:\chromedriver_win32\chromedriver.exe"
-driver = CHROME_BIN
+driver = r"/home/travis/virtualenv/python3.8.2/bin/"
 
 app = "https://agiles2020-ahorcado.herokuapp.com/play/"
 
