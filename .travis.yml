@@ -4,6 +4,13 @@ python:
 #Dependecias
 install:
   - pip install -r requirements.txt
+  - pip install codecov
 #Test
 script:
   - pytest
+  - behave
+  - coverage erase
+  - coverage run project\test_back_end.py && coverage html
+
+after_success:
+  - codecov
