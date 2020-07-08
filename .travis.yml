@@ -18,7 +18,9 @@ script:
   - pytest
   #- behave
   - coverage erase
-  - coverage run --omit='venv/*' project/test_back_end.py && coverage html --omit='venv/*'
+  - cd project
+  - cd test
+  - coverage run -m pytest project/test/test_back_end.py && coverage html --omit='venv/*'
 
 after_success:
   - codecov
