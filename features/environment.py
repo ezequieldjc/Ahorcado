@@ -6,10 +6,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
+
 #Driver para Chrome v83
 #https://chromedriver.storage.googleapis.com/index.html?path=83.0.4103.39/
 #Modificar variable driver segun la ruta personal
-driver = r"C:\chromedriver_win32\chromedriver.exe"
+
+#driver = r"C:\chromedriver_win32\chromedriver.exe"
+driver = CHROME_BIN
 
 app = "https://agiles2020-ahorcado.herokuapp.com/play/"
 

@@ -5,6 +5,10 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install codecov
+before_script:
+  - wget https://chromedriver.storage.googleapis.com/index.html?path=83.0.4103.39/chromedriver_win32.zip
+  - unzip chromedriver_win32.zip -d /home/travis/virtualenv/python3.8.2/bin/
+  - export CHROME_BIN=chromium-browser
 #Test
 script:
   - pytest
