@@ -8,7 +8,7 @@ install:
 before_script:
   - wget https://chromedriver.storage.googleapis.com/index.html?path=83.0.4103.39/chromedriver_win32.zip
   - echo $ PATH
-  - unzip chromedriver_win32.zip -d /home/travis/virtualenv/python3.8.2/bin/
+  - unzip index.html?path=83.0.4103.39/chromedriver_win32.zip -d /home/travis/virtualenv/python3.8.2/bin/
   - export CHROME_BIN=chromium-browser
 #Test
 script:
