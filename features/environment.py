@@ -11,7 +11,9 @@ from selenium.webdriver.chrome.options import Options
 #https://chromedriver.storage.googleapis.com/index.html?path=83.0.4103.39/
 #Modificar variable driver segun la ruta personal
 
-driver = r"C:\chromedriver_win32\chromedriver.exe"
+#driver = r"C:\chromedriver_win32\chromedriver.exe"
+# Use the chrome driver specific to your version of Chrome browser and put it in ./driver directory
+driver = os.path.join(os.path.join(os.path.dirname(__file__), 'driver'), 'chromedriver.exe')
 #driver = r"/home/travis/virtualenv/python3.8.2/bin/"
 
 app = "https://agiles2020-ahorcado.herokuapp.com/play/"
