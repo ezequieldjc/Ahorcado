@@ -10,7 +10,7 @@ script:
   - pytest
   - behave
   - coverage erase
-  - coverage run project\test_back_end.py && coverage html
+  - coverage run --omit='venv/*' project\test_back_end.py && coverage html --omit='venv/*'
 
 after_success:
   - codecov
