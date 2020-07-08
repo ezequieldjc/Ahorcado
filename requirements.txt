@@ -29,3 +29,4 @@ wrapt==1.12.1
 selenium==3.141.0
 behave==1.2.6
 coverage==5.2
+WebTest==2.0.35

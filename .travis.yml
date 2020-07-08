@@ -2,6 +2,9 @@ language: python
 python:
   - "3.8.2"
 #Dependecias
+addons:
+  chrome: stable
+
 install:
   - pip install -r requirements.txt
   - pip install codecov
@@ -13,9 +16,9 @@ before_script:
 #Test
 script:
   - pytest
-  - behave
+  #- behave
   - coverage erase
-  - coverage run --omit='venv/*' project\test_back_end.py && coverage html --omit='venv/*'
+  - coverage run --omit='venv/*' project/test_back_end.py && coverage html --omit='venv/*'
 
 after_success:
   - codecov
