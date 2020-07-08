@@ -30,3 +30,4 @@ selenium==3.141.0
 behave==1.2.6
 coverage==5.2
 WebTest==2.0.35
+webdriver-manager==3.2.1

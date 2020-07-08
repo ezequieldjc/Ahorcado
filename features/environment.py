@@ -4,7 +4,9 @@ from wsgiref import simple_server
 from wsgiref.simple_server import WSGIRequestHandler
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+#from webdriver_manager.chrome import ChromeDriverManager
 
+#driver = webdriver.Chrome(ChromeDriverManager().install())
 
 
 #Driver para Chrome v83
@@ -13,8 +15,8 @@ from selenium.webdriver.chrome.options import Options
 
 #driver = r"C:\chromedriver_win32\chromedriver.exe"
 # Use the chrome driver specific to your version of Chrome browser and put it in ./driver directory
-driver = os.path.join(os.path.join(os.path.dirname(__file__), 'driver'), 'chromedriver.exe')
-#driver = r"/home/travis/virtualenv/python3.8.2/bin/"
+#driver = os.path.join(os.path.join(os.path.dirname(__file__), 'driver'), 'chromedriver.exe')
+driver = r"/home/travis/virtualenv/python3.8.2/bin/chromedriver.exe"
 
 app = "https://agiles2020-ahorcado.herokuapp.com/play/"
 
@@ -23,6 +25,8 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument('--no-proxy-server')
 chrome_options.add_argument("--proxy-server='direct://'")
 chrome_options.add_argument("--proxy-bypass-list=*")
+
+
 
 
 def before_all(context):
