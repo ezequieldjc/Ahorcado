@@ -14,7 +14,7 @@ from selenium.webdriver.chrome.options import Options
 #Modificar variable driver segun la ruta personal
 
 #driver = r"C:\chromedriver_win32\chromedriver.exe"
-driver = r"/home/travis/virtualenv/python3.8.2/bin/chromedriver_linux64"
+driver = r"/home/travis/virtualenv/python3.8.2/bin/chromedriver"
 
 app = "https://agiles2020-ahorcado.herokuapp.com/play/"
 
@@ -33,7 +33,7 @@ def before_all(context):
     context.pa_app = threading.Thread(target=context.server.serve_forever)
     context.pa_app.start()
 
-    context.browser = webdriver.Chrome(options=chrome_options, executable_path=r"/home/travis/virtualenv/python3.8.2/bin/chromedriver_linux64")
+    context.browser = webdriver.Chrome(options=chrome_options, executable_path=r"/home/travis/virtualenv/python3.8.2/bin/chromedriver")
     context.browser.set_page_load_timeout(time_to_wait=200)
 
 
