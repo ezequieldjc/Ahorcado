@@ -14,7 +14,7 @@ from selenium.webdriver.chrome.options import Options
 #Modificar variable driver segun la ruta personal
 
 #driver = r"C:\chromedriver_win32\chromedriver.exe"
-driver = r"/home/travis/virtualenv/python3.8.2/bin/chromedriver_linux64.zip"
+driver = r"/home/travis/virtualenv/python3.8.2/bin/chromedriver_linux64"
 
 app = "https://agiles2020-ahorcado.herokuapp.com/play/"
 
