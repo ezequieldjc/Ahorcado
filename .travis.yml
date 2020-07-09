@@ -16,7 +16,7 @@ before_script:
 #Test
 script:
   - pytest
-  #- behave
+  - behave
   - coverage erase
   - coverage run -m pytest project/test/test_back_end.py && coverage html --omit='venv/*'
 
