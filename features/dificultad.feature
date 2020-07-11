@@ -3,9 +3,9 @@ Feature: Dificultad
         La dificultad ingresada es la que se muestra durante el juego
     """
     Scenario: Prueba de éxito para la dificultad ingresada
-        Given Que navego para jugar en la página
-        And Ingreso un nombre de usuario
-        And Hago clic en Siguiente
+        Given Que entro al juego
+        And Ingreso un user
+        And Clic en Siguiente
         And Selecciono dificultad Media
-        When Hago clic en siguiente
+        When Clic nuevamente en Siguiente
         Then La dificultad mostrada es la correcta

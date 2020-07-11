@@ -1,14 +1,14 @@
 from behave import given, when, then
 
-@given(u'Que navego para jugar en la página')
+@given(u'Que entro al juego')
 def step_impl(context):
     context.browser.get('https://agiles2020-ahorcado.herokuapp.com/play/')
 
-@given(u'Ingreso un nombre de usuario')
+@given(u'Ingreso un user')
 def step_impl(context):
     context.browser.find_element_by_name('name').send_keys('NombreUsuario')
 
-@given(u'Hago clic en Siguiente')
+@given(u'Clic en Siguiente')
 def step_impl(context):
     context.browser.find_element_by_xpath(f"/html/body/div/div/div/div[2]/div/div/form/div/div[2]/button").click()
 
@@ -16,7 +16,7 @@ def step_impl(context):
 def step_impl(context):
     context.browser.find_element_by_xpath(f"/html/body/div/div/div/div[2]/div/div/form[2]/div/div[2]/input").click()
 
-@when(u'Hago clic en siguiente')
+@when(u'Clic nuevamente en Siguiente)
 def step_impl(context):
     context.browser.find_element_by_xpath(f"/html/body/div/div/div/div[2]/div/div/form[2]/div/button").click()
 
