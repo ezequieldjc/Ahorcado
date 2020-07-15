@@ -73,7 +73,7 @@ class Ahorcado():
         return self.puntaje 
 
     def largo_palabra(self,a):
-        x = len(a)
+        x = len(a)+2
         return x 
     
     def limpiar_variables_parcial(self):
@@ -85,7 +85,7 @@ class Ahorcado():
         self.dificultad = 0
         self.letrasing = ''
         session["letrasing"] = ''
-        session["intentos"] = 6
+        session["intentos"] = 5
         session["guia"] = ''
         session["dificultad"] = None
         session["largo"] = None
@@ -95,7 +95,7 @@ class Ahorcado():
         self.palabra = ''
         self.guia = ''
         self.lpalabra = 0
-        self.intentos = 6
+        self.intentos = 5
         self.dificultad = 0
         self.letrasing = ''
 
