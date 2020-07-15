@@ -85,7 +85,7 @@ class Ahorcado():
         self.dificultad = 0
         self.letrasing = ''
         session["letrasing"] = ''
-        session["intentos"] = 5
+        session["intentos"] = 6
         session["guia"] = ''
         session["dificultad"] = None
         session["largo"] = None
@@ -95,7 +95,7 @@ class Ahorcado():
         self.palabra = ''
         self.guia = ''
         self.lpalabra = 0
-        self.intentos = 5
+        self.intentos = 6
         self.dificultad = 0
         self.letrasing = ''
 
