@@ -15,6 +15,12 @@ Lenguaje utilizado: Python -> [Python](https://www.python.org/)
 
 Framework de desarrollo web: Flask (v 1.1.2) -> [Flask](https://flask.palletsprojects.com/) 
 
+### Deploy 
+Heroku -> [Heroku](https://dashboard.heroku.com)
+
+### Database
+Postgre en Heroku -> [Heroku](https://dashboard.heroku.com)
+
 ### CI
 Travis -> [Dashboard](https://travis-ci.com/github/GabiCapitanelli/Ahorcado/builds/176235850)  
 
