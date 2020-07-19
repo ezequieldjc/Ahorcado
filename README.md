@@ -11,12 +11,12 @@ Cada vez que el jugador falle en una letra, perdera intentos, en caso de quedar 
 
 ## Aspectos Tecnicos - Tecnologias Utilizadas 
 
-Lenguaje utilizado: Python -> https://www.python.org/
+Lenguaje utilizado: Python -> [Python](https://www.python.org/)
 
-Framework de desarrollo web: Flask (v 1.1.2) -> https://flask.palletsprojects.com/
+Framework de desarrollo web: Flask (v 1.1.2) -> [Flask](https://flask.palletsprojects.com/) 
 
 ### CI
-Travis -> https://travis-ci.com/github/GabiCapitanelli/Ahorcado/builds/176235850
+Travis -> [Dashboard](https://travis-ci.com/github/GabiCapitanelli/Ahorcado/builds/176235850)  
 
 ### Unit Testing
 Unit Testing:
@@ -24,10 +24,10 @@ Unit Testing:
   Selenium, Cucumber y Jenkins para el front.
 
 ### Reporte de Code Coverage
-Codecov -> https://codecov.io/gh/GabiCapitanelli/Ahorcado
+Codecov -> [Dashboard](https://codecov.io/gh/GabiCapitanelli/Ahorcado)  
 
 ### Analizador estatico de Codigo
-SonarQube -> https://sonarcloud.io/dashboard?id=GabiCapitanelli_Ahorcado
+SonarQube -> [Dashboard](https://sonarcloud.io/dashboard?id=GabiCapitanelli_Ahorcado)  
 
 
 
