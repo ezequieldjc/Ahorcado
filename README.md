@@ -20,8 +20,10 @@ Travis -> [Dashboard](https://travis-ci.com/github/GabiCapitanelli/Ahorcado/buil
 
 ### Unit Testing
 Unit Testing:
-  Libreria unittest para backend
-  Selenium, Cucumber y Jenkins para el front.
+
+  * Libreria unittest para backend
+  
+  * Selenium, Cucumber y Jenkins para el front.
 
 ### Reporte de Code Coverage
 Codecov -> [Dashboard](https://codecov.io/gh/GabiCapitanelli/Ahorcado)  
