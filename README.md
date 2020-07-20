@@ -9,7 +9,8 @@ Cada vez que el jugador falle en una letra, perdera intentos, en caso de quedar 
 ## Juguemos!
 -> http://agiles2020-ahorcado.herokuapp.com/
 
-## Repo Original: https://github.com/gabicapitanelli/ahorcado
+## Repo Original
+https://github.com/gabicapitanelli/ahorcado
 
 ## Aspectos Tecnicos - Tecnologias Utilizadas 
 
